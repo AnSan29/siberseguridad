@@ -1,0 +1,134 @@
+.container-fluid {
+  min-height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
+}
+.panel {
+  position: fixed;
+  z-index: 998;
+  background-color: rgba(153, 47, 47, 0.5);
+  width: 40%;
+  top: 0;
+  bottom: 0; /* Para que ocupe toda la pantalla verticalmente */
+  right: 0; /* Lo colocamos inicialmente en la derecha */
+  transition: transform 0.3s ease;
+  /* Lo ocultamos desplazándolo fuera de la pantalla */
+  transform: translateX(100%);
+  border: 1px solid gray;
+  backdrop-filter: blur(10px); /* 🔥 Esto hace el difuminado */
+  -webkit-backdrop-filter: blur(10px); /* soporte para Safari */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.panel.is-active {
+  transform: translateX(0);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centra el texto horizontalmente */
+  align-items: center; /* centra todo verticalmente */
+  height: 15%; /* altura del header */
+  width: 100%;
+  border-radius: none;
+  background-color: #f94c4d;
+  border-bottom: 1px solid rgb(160, 2, 2);
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.title {
+  margin: 0;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 5px;
+}
+
+.panel-btn {
+  position: fixed;
+  z-index: 999;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.menu a {
+  padding: 2rem;
+  width: 100%;
+  display: block;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  transition: all 0.3s ease;
+}
+.menu a:hover {
+  font-weight: bold;
+  background-color: #ffc107;
+  color: white;
+}
+.panel__image {
+  text-align: center; /* Centrar la imagen */
+  padding: 20px;
+}
+
+.panel__image img {
+  width: 150px; /* Asegura que el ancho y la altura sean iguales */
+  height: 150px;
+  border-radius: 50%; /* Hace que la imagen sea completamente circular */
+  object-fit: cover; /* Evita que se deforme y ajusta la imagen dentro del círculo */
+  display: block; /* Evita espacios extra en algunos navegadores */
+  border: 3px solid white; /* Añade un borde blanco */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.carousel {
+  max-width: 800px; /* Ancho máximo */
+  max-height: 400px; /* Alto máximo */
+  margin: auto; /* Centrar el carrusel */
+  padding: 10px;
+}
+
+.carousel-inner img {
+  width: 100%; /* Ajusta la imagen al 100% del contenedor */
+  height: 400px; /* Altura fija */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+}
+footer {
+  background-color: rgb(215, 28, 28);
+  padding: 5px;
+  min-height: 50px; /* Opcional: define un mínimo para que no sea demasiado pequeño */
+  width: 100%;
+}
+.card-custom {
+  transition: 0.5s ease;
+}
+
+.card-custom:hover {
+  background-color: #f94c4d !important;
+  color: white !important;
+  transition: 0.5s ease;
+}
